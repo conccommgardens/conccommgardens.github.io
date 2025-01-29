@@ -1,128 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Events</title>
+  <title>Community Garden Events</title>
   <style>
-    /* Basic styling for the calendar */
-    .calendar {
-      width: 300px;
-      margin: 20px auto;
+    /* Basic styling for the page - feel free to customize */
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .event-container {
+      margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 5px;
       padding: 10px;
+      border-radius: 5px;
     }
-    .calendar-header {
-      text-align: center;
+    .event-title {
       font-weight: bold;
-      margin-bottom: 10px;
     }
-    .calendar-weekdays {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      text-align: center;
-    }
-    .calendar-days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-    }
-    .calendar-day {
-      border: 1px solid #ccc;
-      padding: 5px;
-      text-align: center;
-    }
-    .today {
-      background-color: #f0f0f0;
+    .event-date {
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <h1>Events</h1>
+  <h1>Upcoming Events</h1>
 
-  <div class="calendar">
-    <div class="calendar-header" id="month-year"></div>
-    <div class="calendar-weekdays">
-      <div>Sun</div>
-      <div>Mon</div>
-      <div>Tue</div>
-      <div>Wed</div>
-      <div>Thu</div>
-      <div>Fri</div>
-      <div>Sat</div>
-    </div>
-    <div class="calendar-days" id="calendar-days"></div>
+  <div class="event-container">
+    <h2 class="event-title">Event Name</h2> 
+    <p class="event-date">Date: [Date of Event]</p> 
+    <p>Event Description</p> 
   </div>
 
-  <script>
-    // Get the current date
-    const today = new Date();
-    const currentMonth = today.getMonth();
-    const currentYear = today.getFullYear();
+  <h1>Past Events</h1>
 
-    // Array of month names
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
+  <div class="event-container">
+    <h2 class="event-title">Past Event 1</h2>
+    <p class="event-date">Date: [Past Event Date]</p>
+    <p>Description of past event.</p>
+  </div>
 
-    // Get the calendar header element
-    const monthYearElement = document.getElementById("month-year");
-
-    // Get the calendar days container
-    const calendarDaysElement = document.getElementById("calendar-days");
-
-    // Function to generate the calendar
-    function generateCalendar(month, year) {
-      // Clear any existing days
-      calendarDaysElement.innerHTML = "";
-
-      // Get the first day of the month
-      const firstDayOfMonth = new Date(year, month, 1).getDay();
-
-      // Get the number of days in the month
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      // Add empty cells for days before the first day of the month
-      for (let i = 0; i < firstDayOfMonth; i++) {
-        const emptyCell = document.createElement("div");
-        calendarDaysElement.appendChild(emptyCell);
-      }
-
-      // Add the days of the month
-      for (let i = 1; i <= daysInMonth; i++) {
-        const dayElement = document.createElement("div");
-        dayElement.classList.add("calendar-day");
-        dayElement.textContent = i;
-
-        // Highlight today's date
-        if (
-          i === today.getDate() &&
-          month === today.getMonth() &&
-          year === today.getFullYear()
-        ) {
-          dayElement.classList.add("today");
-        }
-
-        calendarDaysElement.appendChild(dayElement);
-      }
-
-      // Update the month and year in the header
-      monthYearElement.textContent = months[month] + " " + year;
-    }
-
-    // Generate the initial calendar
-    generateCalendar(currentMonth, currentYear);
-  </script>
+  <div class="event-container">
+    <h2 class="event-title">Past Event 2</h2>
+    <p class="event-date">Date: [Past Event Date]</p>
+    <p>Description of another past event.</p>
+  </div>
 
 </body>
 </html>
