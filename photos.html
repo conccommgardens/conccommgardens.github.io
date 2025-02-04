@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>9x9 Photo Matrix</title>
+<style>
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center;     /* Center the grid vertically */
+  min-height: 100vh;       /* Ensure full viewport height */
+  margin: 0;             /* Remove default margins */
+  background-color: #f0f0f0; /* Light background */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, 100px); /* 9 columns of 100px width */
+  grid-template-rows: repeat(9, 100px);    /* 9 rows of 100px height */
+  gap: 5px; /* Spacing between grid items */
+}
+
+.grid-item {
+  position: relative; /* For positioning the flip container */
+  width: 100px;
+  height: 100px;
+  perspective: 1000px; /* For 3D effect */
+}
+
+.flip-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* Smooth flip animation */
+  transform-style: preserve-3d; /* Maintain 3D context */
+}
+
+.grid-item:hover .flip-container {
+  transform: rotateY(180deg); /* Rotate on hover */
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide back side */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px; /* Optional: Rounded corners */
+  overflow: hidden; /* Hide image overflow */
+}
+
+.front {
+  background-size: cover; /* Cover the entire div */
+  background-position: center; /* Center the image */
+}
+
+.back {
+  background-color: #333; /* Dark background for text */
+  color: white;
+  transform: rotateY(180deg); /* Rotate back side initially */
+  padding: 10px;
+  text-align: center; /* Center text */
+  font-size: 14px;  /* Adjust font size as needed */
+}
+
+/* Example image styles (replace with your actual images) */
+.image1 { background-image: url('image1.jpg'); }
+.image2 { background-image: url('image2.jpg'); }
+/* ... other image classes */
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <div class="flip-container">
+      <div class="front image1"></div>  <div class="back">Text for image 1</div> </div>
+  </div>
+  <div class="grid-item">
+    <div class="flip-container">
+      <div class="front image2"></div>  <div class="back">Text for image 2</div> </div>
+  </div>
+  </div>
+
+</body>
+</html>
