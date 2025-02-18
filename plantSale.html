@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Sale</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd; /* Light gray border */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Light gray bottom border */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light gray background for header */
+        }
+
+        img {
+            max-width: 150px; /* Adjust image size as needed */
+            height: auto;
+        }
+        body {
+            font-family: sans-serif; /* Use a common font */
+        }
+        h1 {
+          text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Plant Sale!</h1>
+
+    <div id="plant1">
+        <h2><i>Silene regia</i>- Royal Catchfly</h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <td><img src="Garden Photos/royalcatch.jpg" alt="Plant 1"></td> 
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>$<input type="text" value="10.00"></td>
+            </tr>
+            <tr>
+                <th>Growing Conditions</th>
+                <td><textarea rows="4" cols="50">Light: Full sun, Part shade. Water: Regular watering.</textarea></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><textarea rows="4" cols="50">A beautiful and easy-to-care-for plant. Perfect for beginners.</textarea></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="plant2">
+        <h2>Plant 2: (Plant Name Here)</h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <td><img src="placeholder.jpg" alt="Plant 2"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>$<input type="text" value="15.00"></td>
+            </tr>
+            <tr>
+                <th>Growing Conditions</th>
+                <td><textarea rows="4" cols="50">Light: Shade. Water: Infrequent watering.</textarea></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><textarea rows="4" cols="50">A low-maintenance succulent. Great for indoor spaces.</textarea></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
