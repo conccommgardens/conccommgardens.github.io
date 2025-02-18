@@ -31,83 +31,26 @@
       line-height: 1.6;
       color: #666;
       margin-bottom: 1rem;
-    }
+    }     
+        .container {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr); /* 9 equal columns */
+            grid-template-rows: repeat(9, 1fr);    /* 9 equal rows */
+            width: 500px; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
+            gap: 2px;      /* Spacing between images */
+        }
 
-    /* Images */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
-    }
-        body {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center; /* Center the grid horizontally */
-          align-items: center;     /* Center the grid vertically */
-          min-height: 100vh;       /* Ensure full viewport height */
-          margin: 0;             /* Remove default margins */
-          background-color: #f0f0f0; /* Light background */
+        .image-cell {
+            overflow: hidden; /* Prevents image overflow */
         }
-        
-        .grid-container {
-          display: grid;
-          grid-template-columns: repeat(9, 100px); /* 9 columns of 500px width */
-          grid-template-rows: repeat(9, 100px);    /* 9 rows of 500px height */
-          gap: 5px; /* Spacing between grid items */
+
+        .image-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images fill the cell without distortion */
+            display: block; /* Prevents small space below image */
         }
-        
-        .grid-item {
-          position: relative; /* For positioning the flip container */
-          width: 100px;
-          height: 100px;
-          perspective: 1000px; /* For 3D effect */
-        }
-        
-        .flip-container {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.8s; /* Smooth flip animation */
-          transform-style: preserve-3d; /* Maintain 3D context */
-        }
-        
-        .grid-item:hover .flip-container {
-          transform: rotateY(180deg); /* Rotate on hover */
-        }
-        
-        .front, .back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          backface-visibility: hidden; /* Hide back side */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 5px; /* Optional: Rounded corners */
-          overflow: hidden; /* Hide image overflow */
-        }
-        
-        .front {
-          background-size: cover; /* Cover the entire div */
-          background-position: center; /* Center the image */
-        }
-        
-        .back {
-          background-color: #333; /* Dark background for text */
-          color: white;
-          transform: rotateY(180deg); /* Rotate back side initially */
-          padding: 10px;
-          text-align: center; /* Center text */
-          font-size: 14px;  /* Adjust font size as needed */
-        }
-        
-        /* Example image styles (replace with your actual images) */
-        .image1 { background-image: url('beebalm1.jpg'); }
-        .image2 { background-image: url('beebalm2.jpg'); }
-        /* ... other image classes */
-        
-              
   </style>
     
 </head>
@@ -143,6 +86,27 @@
     </header>
 
     
+    <div class="container">
+        <div class="image-cell">
+            <img src="beebalm1.jpg" alt="Image 1">  </div>
+        <div class="image-cell">
+            <img src="beebalm2.jpg" alt="Image 2">  </div>
+        <div class="image-cell">
+            <img src="butterflyweed.jpg" alt="Image 3">  </div>
+        <div class="image-cell">
+            <img src="calipoppy.jpg" alt="Image 4"> </div>
+        <div class="image-cell">
+            <img src="dahila1.jpg" alt="Image 5"> </div>
+        <div class="image-cell">
+            <img src="daylily1.jpg" alt="Image 6">  </div>
+        <div class="image-cell">
+            <img src="daylily2.jpg" alt="Image 7">  </div>
+        <div class="image-cell">
+            <img src="Garden Photos/bounty.jpg" alt="Image 8"> </div>
+        <div class="image-cell">
+            <img src="Garden Photos/hugeSF.jpg" alt="Image 9"> </div>         
+    </div>
+
     <main>
         <section>
             <h2>About Our Garden</h2>
