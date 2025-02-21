@@ -5,56 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Community Garden</title>
     <link rel="stylesheet" href="style.css"> 
-  <style>
+  
+<style>
     /* Headers */
-    h1 {
-      font-size: 2.5rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #777;
-      margin-bottom: 0.5rem;
-    }
-
+    h1 {font-size: 2.5rem;color: #333; margin-bottom: 1.5rem;}
+    h2 {font-size: 2rem;color: #555; margin-bottom: 1rem;}
+    h3 {font-size: 1.5rem;color: #777; margin-bottom: 0.5rem;}
     /* Paragraphs */
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #666;
-      margin-bottom: 1rem;
-    }     
-      
-     .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 9 equal columns */
-        grid-template-rows: repeat(3, 1fr);    /* 9 equal rows */
-        width: 100%; /* Adjust as needed */
-        height: 1000px; /* Adjust as needed */
-        gap: 2px;      /* Spacing between images */
-    }
+    p {font-size: 1rem; line-height: 1.6; color: #666; margin-bottom: 1rem;}     
 
-        .image-cell {
-            overflow: hidden; /* Prevents image overflow */
-        }
+    /* 9X9 Display */
+    .container {display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 9 equal columns */
+                grid-template-rows: repeat(3, 1fr);    /* 9 equal rows */
+                width: 100%; height: 1000px; /* Adjust as needed */    gap: 2px;      /* Spacing between images */}
 
-        .image-cell img {
-            width: 100%;
-            height: 100%;
+    .image-cell { overflow: hidden; /* Prevents image overflow */ }
+
+    .image-cell img {width: 100%; height: 100%;
             object-fit: cover; /* Ensures images fill the cell without distortion */
-            display: block; /* Prevents small space below image */
-        }
-  </style>
+            display: block; /* Prevents small space below image */}
+
+    /* Embed iframe map */
+    .map-container {width: 100%; /* Ensures the container takes full width */
+                    height: 0; /* Creates a ratio for responsive height */
+                    padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+                    position: relative; /* Needed for absolute positioning of iframe */
+                    overflow: hidden; /* Prevents map from overflowing container */}
+
+  .map-container iframe {position: absolute; top: 0;left: 0;
+    width: 100%; height: 100%; border: 0; /* Optional: Remove iframe border */ }
     
+</style>
 </head>
+    
 <body>
 
     <header>
@@ -138,6 +122,11 @@
             Concord St & Morgan St
             Cincinnati, OH  45206
             </a></p>
+            <p></p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6190.396720453188!2d-84.4935754!3d39.1247174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3c6f4eb7f2b%3A0x4b5b047bb394bf99!2s2401%20Concord%20St%2C%20Cincinnati%2C%20OH%2045206!5e0!3m2!1sen!2sus!4v1740167575660!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             
             <h3> Garden Blog</h3>
             <p>Gardeners are encouraged to share their written thoughts, ideas, etc, <a href="blog1.html">On Our Blog</a>! </p>
